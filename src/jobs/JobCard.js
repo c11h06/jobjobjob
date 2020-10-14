@@ -3,13 +3,14 @@ import { Link } from 'react-router-dom';
 import JoblyApi from '../JoblyApi';
 
 function JobCard({id, title, salary, equity, history }) {
-
+    // fetches job info 
     async function apply(id) {
         console.log("ID......", id);
         let application = await JoblyApi.apply(id);
         return application;
       }
-
+    
+      // renders job description
     return (
         <div className="job">
             <p>The job is {title}, it pays {salary}. The equity is {equity}.</p>
